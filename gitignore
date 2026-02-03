@@ -1,0 +1,17 @@
+# التبعيات
+node_modules/
+*.log
+
+# ملفات البناء
+dist/
+build/
+*.exe
+*.app
+
+# محررات الأكواد
+.vscode/
+.idea/
+
+# ملفات نظام التشغيل
+.DS_Store
+Thumbs.db
