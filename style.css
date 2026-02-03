@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    overflow: hidden;
+    direction: rtl;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f3460;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s;
+}
+
+.loader {
+    text-align: center;
+}
+
+.loader i {
+    font-size: 4rem;
+    color: #e94560;
+    margin-bottom: 1rem;
+    animation: pulse 1.5s infinite;
+}
+
+.loader p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #e94560;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#game-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#hud {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.speedometer {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 25px;
+    border-radius: 10px;
+    border-left: 5px solid #e94560;
+}
+
+.speedometer .speed {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.speedometer .unit {
+    font-size: 1rem;
+    color: #aaa;
+    margin-right: 5px;
+}
+
+.lap-counter, .timer {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+#menu {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background: rgba(15, 52, 96, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    min-width: 300px;
+    backdrop-filter: blur(10px);
+    border: 2px solid #e94560;
+}
+
+#menu h1 {
+    margin-bottom: 30px;
+    color: #e94560;
+    font-size: 2.5rem;
+}
+
+.menu-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background: #16213e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.menu-btn:hover {
+    background: #e94560;
+    transform: translateY(-2px);
+}
+
+.menu-btn i {
+    margin-left: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
